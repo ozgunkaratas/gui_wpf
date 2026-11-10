@@ -1,9 +1,23 @@
-﻿<Application x:Class="WpfApp1.App"
+<!--
+    App.xaml  -  the application object. It plays the role Program.cs had in WinForms.
+
+    Changes from the Visual Studio template:
+      * StartupUri="MainWindow.xaml" removed: instead of WPF opening a window by
+        itself, App_Startup (in App.xaml.cs) opens the dialog and reads the result,
+        exactly like Main() did in Program.cs.
+      * Startup="App_Startup": XAML-to-code event wiring, the same mechanism as
+        Click="OnOkClicked" in InputDialog.xaml.
+      * ShutdownMode="OnExplicitShutdown": the app stays alive until we call
+        Shutdown(), so closing the dialog doesn't end the program before
+        App_Startup has looked at the result.
+-->
+<Application x:Class="WpfApp1.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:WpfApp1"
-             StartupUri="MainWindow.xaml">
+             Startup="App_Startup"
+             ShutdownMode="OnExplicitShutdown">
     <Application.Resources>
-         
+
     </Application.Resources>
 </Application>
